@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/29 11:01:29 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/11/29 11:13:52 by jbarbate         ###   ########.fr       */
+/*   Created: 2022/11/30 10:21:58 by jbarbate          #+#    #+#             */
+/*   Updated: 2022/11/30 11:35:16 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	main(int argc, char **argv)
-{
-	if (argc != 2 || argvctrl(argc) != 0)
-		return (0);
+#include "../include/push_swap.h"
 
+int	main(void)
+{
+	ft_putendl_fd("Salut", 1);
 	return (0);
 }
