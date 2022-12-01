@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:10:05 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/11/30 11:44:58 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/01 15:17:28 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,9 @@ typedef struct s_stack
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }				t_stack;
+
+t_stack	*ft_new_root(void);
+t_stack	*ft_new_elem(void *data, t_stack *root);
+int		ft_stack_size(t_stack *root);
 
 #endif
