@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   algo_5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 10:21:58 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/07 13:58:01 by jbarbate         ###   ########.fr       */
+/*   Created: 2022/12/07 14:00:17 by jbarbate          #+#    #+#             */
+/*   Updated: 2022/12/07 14:32:20 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/push_swap.h"
-#include <stdio.h>
-int	main(int argc, char **argv)
+int	ft_fivenb(t_stack *root_a)
 {
-	t_stack	*root_a;
 	t_stack	*root_b;
 
-	if (argc < 2)
-		return (ft_putendl_fd("ERROR: Need more 1 arg", 1), 1);
-	root_a = ft_argstack(argv + 1);
 	root_b = ft_new_root();
+	while (ft_stack_size(root_a) > 3)
+	{
+		p(root_a, root_b);
+		ft_putendl_fd("pb", 1);
+	}
 	ft_dispatch(root_a);
-	return (0);
+
 }

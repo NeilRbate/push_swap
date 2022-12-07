@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:10:05 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/07 11:04:47 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/07 13:53:31 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ int		r(t_stack *root);
 int		rab(t_stack *root_a, t_stack *root_b);
 int		rr(t_stack *root);
 int		rrab(t_stack *root_a, t_stack *root_b);
+int		ft_twonb(t_stack *root_a);
+int		ft_dispatch(t_stack *root_a);
 char	**free_split(char **split);
+void	ft_threenb(t_stack *root_a);
 
 #endif
