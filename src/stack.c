@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 12:45:02 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/07 10:49:06 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/07 15:17:06 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int	ft_stack_size(t_stack *root)
 	t_stack	*elem;
 
 	i = 0;
+	if (root->next == NULL || root->next == root)
+		return (0);
 	elem = root->next;
 	while (elem != root)
 	{
