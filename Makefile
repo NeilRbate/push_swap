@@ -6,12 +6,13 @@
 #    By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 10:45:24 by jbarbate          #+#    #+#              #
-#    Updated: 2022/12/01 17:21:07 by jbarbate         ###   ########.fr        #
+#    Updated: 2022/12/07 10:42:10 by jbarbate         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 GCC = gcc
-SRCS = src/main.c src/stack.c src/instructions_1.c src/instructions_2.c
+SRCS = src/main.c src/stack.c src/instructions_1.c src/instructions_2.c \
+	   src/free.c src/parsing.c
 HEADER = libft/libft.a
 OBJS = ${SRCS:.c=.o}
 NAME = push_swap
