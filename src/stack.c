@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 12:45:02 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/07 15:17:06 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/10 10:34:04 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,31 @@ int	ft_stack_size(t_stack *root)
 		i++;
 	}
 	return (i);
+}
+
+int	ft_issort(t_stack *root)
+{
+	t_stack	*elem;
+
+	elem = root->next;
+	while (elem != root)
+	{
+		if (elem->data < elem->next->data && elem->next != root)
+			return (0);
+		elem = elem->next;
+	}
+	return (1);
+}
+
+void	ft_print_stack(t_stack *root)
+{
+	t_stack	*elem;
+
+	elem = root->next;
+	while (elem != root)
+	{
+		ft_putnbr_fd(elem->data, 1);
+		ft_putchar_fd('\n', 1);
+		elem = elem->next;
+	}
 }

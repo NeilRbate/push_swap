@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:49:53 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/07 15:07:49 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/10 10:30:28 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,15 @@ int	s(t_stack *root)
 {
 	t_stack	*elem_1;
 	t_stack	*elem_2;
+	int		stock;
 
 	if (ft_stack_size(root) < 2)
 		return (-1);
 	elem_1 = root->next;
 	elem_2 = elem_1->next;
-	elem_1->next = elem_2->next;
-	root->next = elem_2;
-	elem_2->next = elem_1;
-	elem_2->prev = root;
-	elem_1->prev = elem_2;
+	stock = elem_1->data;
+	elem_1->data = elem_2->data;
+	elem_2->data = stock;
 	return (0);
 }
 
@@ -49,8 +48,8 @@ int	p(t_stack *root_src, t_stack *root_dst)
 	else if (ft_stack_size(root_src) == 1)
 	{
 		elem = root_src->next;
-		root_src->next = NULL;
-		root_src->prev = NULL;
+		root_src->next = root_src;
+		root_src->prev = root_src;
 		ft_new_elem(elem->data, root_dst);
 		free(elem);
 	}
@@ -69,19 +68,16 @@ int	p(t_stack *root_src, t_stack *root_dst)
 int	r(t_stack *root)
 {
 	t_stack	*first;
-	t_stack	*second;
-	t_stack	*stock;
+	t_stack	*last;
+	int		stock;
 
 	if (ft_stack_size(root) < 2)
 		return (-1);
 	first = root->next;
-	second = first->next;
-	stock = root->prev;
-	stock->next = first;
-	first->prev = stock;
-	first->next = root;
-	second->prev = root;
-	root->next = second;
+	last = root->prev;
+	stock = first->data;
+	first->data = last->data;
+	last->data = stock;
 	return (0);
 }
 
