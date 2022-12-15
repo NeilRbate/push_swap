@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:50:23 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/15 13:37:42 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:13:42 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,19 @@ int	pa(t_stack *root_src, t_stack *root_dst)
 
 int	ra(t_stack *root)
 {
-	int	stock;
+	t_stack	*first;
+	t_stack	*last;
 
 	if (ft_stack_size(root) < 2)
 		return (-1);
-	stock = root->next->data;
-	root->next->data = root->prev->data;
-	root->prev->data = stock;
+	first = root->next;
+	last = root->prev;
+	root->prev = first;
+	root->next = first->next;
+	first->prev = last;
+	first->next = root;
+	root->next->prev = root;
+	last->next = first;
 	ft_putendl_fd("ra", 1);
 	return (0);
 }

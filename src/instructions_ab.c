@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:53:26 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/15 13:11:01 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/15 14:16:54 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	rr(t_stack *root_a, t_stack *root_b)
 
 	a = ra(root_a);
 	b = rb(root_b);
-	return (a + b);
+	return (0);
 }
 
 int	rrr(t_stack *root_a, t_stack *root_b)
