@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_1.c                                   :+:      :+:    :+:   */
+/*   instructions_a.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 15:49:53 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/10 10:30:28 by jbarbate         ###   ########.fr       */
+/*   Created: 2022/12/15 12:50:23 by jbarbate          #+#    #+#             */
+/*   Updated: 2022/12/15 13:37:42 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	s(t_stack *root)
+int	sa(t_stack *root)
 {
-	t_stack	*elem_1;
-	t_stack	*elem_2;
 	int		stock;
 
 	if (ft_stack_size(root) < 2)
 		return (-1);
-	elem_1 = root->next;
-	elem_2 = elem_1->next;
-	stock = elem_1->data;
-	elem_1->data = elem_2->data;
-	elem_2->data = stock;
+	stock = root->next->next->data;
+	root->next->next->data = root->next->data;
+	root->next->data = stock;
+	ft_putendl_fd("sa", 1);
 	return (0);
 }
 
-int	ss(t_stack *root_a, t_stack *root_b)
-{
-	int	a;
-	int	b;
-
-	a = s(root_a);
-	b = s(root_b);
-	return (a + b);
-}
-
-int	p(t_stack *root_src, t_stack *root_dst)
+int	pa(t_stack *root_src, t_stack *root_dst)
 {
 	t_stack	*elem;
 	t_stack	*stock;
@@ -62,14 +49,28 @@ int	p(t_stack *root_src, t_stack *root_dst)
 		ft_new_elem(elem->data, root_dst);
 		free(elem);
 	}
+	ft_putendl_fd("pa", 1);
 	return (0);
 }
 
-int	r(t_stack *root)
+int	ra(t_stack *root)
 {
+	int	stock;
+
+	if (ft_stack_size(root) < 2)
+		return (-1);
+	stock = root->next->data;
+	root->next->data = root->prev->data;
+	root->prev->data = stock;
+	ft_putendl_fd("ra", 1);
+	return (0);
+}
+
+int	rra(t_stack *root)
+{
+	int		stock;
 	t_stack	*first;
 	t_stack	*last;
-	int		stock;
 
 	if (ft_stack_size(root) < 2)
 		return (-1);
@@ -78,15 +79,6 @@ int	r(t_stack *root)
 	stock = first->data;
 	first->data = last->data;
 	last->data = stock;
+	ft_putendl_fd("rra", 1);
 	return (0);
-}
-
-int	rab(t_stack *root_a, t_stack *root_b)
-{
-	int	a;
-	int	b;
-
-	a = r(root_a);
-	b = r(root_b);
-	return (a + b);
 }

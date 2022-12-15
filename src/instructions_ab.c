@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_2.c                                   :+:      :+:    :+:   */
+/*   instructions_ab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/01 17:13:11 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/06 11:38:09 by jbarbate         ###   ########.fr       */
+/*   Created: 2022/12/15 12:53:26 by jbarbate          #+#    #+#             */
+/*   Updated: 2022/12/15 13:11:01 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	rr(t_stack *root)
-{
-	t_stack	*last;
-	t_stack	*before_last;
-	t_stack	*stock;
-
-	if (ft_stack_size(root) < 2)
-		return (-1);
-	last = root->prev;
-	before_last = last->prev;
-	stock = root->next;
-	stock->prev = last;
-	last->next = stock;
-	last->prev = root;
-	before_last->next = root;
-	root->prev = before_last;
-	return (0);
-}
-
-int	rrab(t_stack *root_a, t_stack *root_b)
+int	ss(t_stack *root_a, t_stack *root_b)
 {
 	int	a;
 	int	b;
 
-	a = rr(root_a);
-	b = rr(root_b);
+	a = sa(root_a);
+	b = sb(root_b);
+	ft_putendl_fd("ss", 1);
+	return (a + b);
+}
+
+int	rr(t_stack *root_a, t_stack *root_b)
+{
+	int	a;
+	int	b;
+
+	a = ra(root_a);
+	b = rb(root_b);
+	return (a + b);
+}
+
+int	rrr(t_stack *root_a, t_stack *root_b)
+{
+	int	a;
+	int	b;
+
+	a = rra(root_a);
+	b = rrb(root_b);
+	ft_putendl_fd("rrr", 1);
 	return (a + b);
 }
