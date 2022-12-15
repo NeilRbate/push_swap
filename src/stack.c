@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 12:45:02 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/10 10:34:04 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:52:14 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	ft_issort(t_stack *root)
 	elem = root->next;
 	while (elem != root)
 	{
-		if (elem->data < elem->next->data && elem->next != root)
+		if ((elem->data < elem->next->data) && elem->next != root)
 			return (0);
 		elem = elem->next;
 	}

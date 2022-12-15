@@ -6,12 +6,12 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 10:21:58 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/10 10:40:12 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:56:22 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
+
 int	main(int argc, char **argv)
 {
 	t_stack	*root_a;

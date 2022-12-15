@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:44:57 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/08 10:43:57 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/14 11:28:21 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_dispatch(t_stack *root_a)
 	else if (ft_stack_size(root_a) == 2)
 		return (ft_twonb(root_a));
 	else if (ft_stack_size(root_a) == 3)
-		return (ft_threenb(root_a), 0);
+		return (ft_threenb(root_a));
 	else if (ft_stack_size(root_a) <= 5)
 		return (ft_fivenb(root_a));
 
