@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 12:02:35 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/14 11:21:48 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/16 11:17:09 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,16 +60,23 @@ int	ft_isvalidarg(char *argv)
 int	ft_isvalidvalue(char **argv)
 {
 	int		i;
+	int		j;
 
 	i = 0;
 	while (argv[i])
 	{
+		j = i + 1;
 		if (ft_isoverflow(argv[i]) != 0)
 			return (ft_putendl_fd("ERROR: int overflow", 1), -1);
-		if (argv[i + 1] != '\0' && ft_strcmp(argv[i], argv[i + 1]) == 0)
-			return (ft_putendl_fd("ERROR: 2 equals values", 1), -1);
 		if (ft_isvalidarg(argv[i]) != 0)
 			return (ft_putendl_fd("ERROR: invalid value", 1), -1);
+		while (argv[j])
+		{
+			if (ft_strlen(argv[i]) == ft_strlen(argv[j])
+				&& ft_strcmp(argv[i], argv[j]) == 0)
+				return (ft_putendl_fd("ERROR: 2 equals values", 1), -1);
+			j++;
+		}
 		i++;
 	}
 	return (0);
