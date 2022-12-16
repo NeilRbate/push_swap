@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 10:21:58 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/15 14:08:48 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/16 10:44:57 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,5 @@ int	main(int argc, char **argv)
 		return (ft_putendl_fd("IS SORT", 1), 1);
 	}
 	ft_dispatch(root_a);
-	ft_print_stack(root_a);
 	return (0);
 }
