@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 10:21:58 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/19 09:15:23 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/19 12:43:54 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ int	main(int argc, char **argv)
 	if (root_a == NULL)
 		return (-1);
 	if (ft_issort(root_a) == 1)
-		return (ft_putendl_fd("IS SORT", 1), 1);
+		return (0);
 	ft_dispatch(root_a);
-	ft_print_stack(root_a);
 	return (0);
 }
