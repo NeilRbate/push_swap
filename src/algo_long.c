@@ -6,33 +6,47 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:01:53 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/19 17:07:17 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/19 17:39:15 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
-#include <stdio.h>
 
 int	ft_sort(t_stack	*root_a)
 {
 	t_stack	*root_b;
+	t_stack	*elem;
 	int	max;
 	int	bit;
 	int	i;
+	int	j;
 
 
 	bit = 0;
 	i = 0;
+	j = 0;
 	max = ft_stack_size(root_a) - 1;
 	root_b = ft_new_root();
+	elem = root_a->next;
 	while (max>>bit != 0)
 		bit++;
 	while (i < bit)
 	{
-		//fonction a faire !!1
+		while (j < ft_stack_size(root_a))
+		{
+			if (((elem->data>>i)&1) == 0)
+				ra(root_a, 1);
+			else
+				pb(root_a, root_b, 1);
+			elem = elem->next;
+			j++;
+		}
+		j = 0;
+		i++;
+		elem = root_a->next;
 	}
-	
-	printf("%i\n", bit);
+	while (ft_stack_size(root_b) > 0)
+		pa(root_b, root_a, 1);
 	return (0);
 }
 
