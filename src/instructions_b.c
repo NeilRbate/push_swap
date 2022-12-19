@@ -6,13 +6,13 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:49:53 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/19 09:13:20 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:36:44 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	sb(t_stack *root)
+int	sb(t_stack *root, int a)
 {
 	int		stock;
 
@@ -21,11 +21,12 @@ int	sb(t_stack *root)
 	stock = root->next->next->data;
 	root->next->next->data = root->next->data;
 	root->next->data = stock;
-	ft_putendl_fd("sb", 1);
+	if (a > 0)
+		ft_putendl_fd("sb", 1);
 	return (0);
 }
 
-int	pb(t_stack *root_src, t_stack *root_dst)
+int	pb(t_stack *root_src, t_stack *root_dst, int a)
 {
 	t_stack	*elem;
 	t_stack	*stock;
@@ -48,11 +49,12 @@ int	pb(t_stack *root_src, t_stack *root_dst)
 		ft_new_elem(elem->data, root_dst);
 		free(elem);
 	}
-	ft_putendl_fd("pb", 1);
+	if (a > 0)
+		ft_putendl_fd("pb", 1);
 	return (0);
 }
 
-int	rb(t_stack *root)
+int	rb(t_stack *root, int a)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -67,11 +69,12 @@ int	rb(t_stack *root)
 	first->next = root;
 	root->next->prev = root;
 	last->next = first;
-	ft_putendl_fd("rb", 1);
+	if (a > 0)
+		ft_putendl_fd("rb", 1);
 	return (0);
 }
 
-int	rrb(t_stack	*root)
+int	rrb(t_stack	*root, int a)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -88,6 +91,7 @@ int	rrb(t_stack	*root)
 	last->prev = root;
 	last->next = first;
 	first->prev = last;
-	ft_putendl_fd("rrb", 1);
+	if (a > 0)
+		ft_putendl_fd("rrb", 1);
 	return (0);
 }

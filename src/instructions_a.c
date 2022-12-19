@@ -6,13 +6,13 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:50:23 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/19 09:15:37 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/19 14:41:04 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	sa(t_stack *root)
+int	sa(t_stack *root, int a)
 {
 	int		stock;
 
@@ -21,11 +21,12 @@ int	sa(t_stack *root)
 	stock = root->next->next->data;
 	root->next->next->data = root->next->data;
 	root->next->data = stock;
-	ft_putendl_fd("sa", 1);
+	if (a > 0)
+		ft_putendl_fd("sa", 1);
 	return (0);
 }
 
-int	pa(t_stack *root_src, t_stack *root_dst)
+int	pa(t_stack *root_src, t_stack *root_dst, int a)
 {
 	t_stack	*elem;
 	t_stack	*stock;
@@ -49,11 +50,12 @@ int	pa(t_stack *root_src, t_stack *root_dst)
 		ft_new_elem(elem->data, root_dst);
 		free(elem);
 	}
-	ft_putendl_fd("pa", 1);
+	if (a > 0)
+		ft_putendl_fd("pa", 1);
 	return (0);
 }
 
-int	ra(t_stack *root)
+int	ra(t_stack *root, int a)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -68,11 +70,12 @@ int	ra(t_stack *root)
 	first->next = root;
 	root->next->prev = root;
 	last->next = first;
-	ft_putendl_fd("ra", 1);
+	if (a > 0)
+		ft_putendl_fd("ra", 1);
 	return (0);
 }
 
-int	rra(t_stack	*root)
+int	rra(t_stack	*root, int a)
 {
 	t_stack	*first;
 	t_stack	*last;
@@ -89,6 +92,7 @@ int	rra(t_stack	*root)
 	last->prev = root;
 	last->next = first;
 	first->prev = last;
-	ft_putendl_fd("rra", 1);
+	if (a > 0)
+		ft_putendl_fd("rra", 1);
 	return (0);
 }
