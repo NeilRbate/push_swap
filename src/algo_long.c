@@ -6,24 +6,34 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:01:53 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/19 16:35:06 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/19 17:07:17 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
+#include <stdio.h>
 
 int	ft_sort(t_stack	*root_a)
 {
 	t_stack	*root_b;
 	int	max;
 	int	bit;
+	int	i;
 
 
+	bit = 0;
+	i = 0;
 	max = ft_stack_size(root_a) - 1;
 	root_b = ft_new_root();
-	while (num >> bit != 0)
+	while (max>>bit != 0)
 		bit++;
-
+	while (i < bit)
+	{
+		//fonction a faire !!1
+	}
+	
+	printf("%i\n", bit);
+	return (0);
 }
 
 void	ft_sort_int_tab(int *tab, int size)
@@ -91,5 +101,6 @@ int	ft_bigsort(t_stack *root_a)
 	}
 	ft_replace_data(root_a, tab);
 	free(tab);
+	ft_sort(root_a);
 	return (0);
 }
