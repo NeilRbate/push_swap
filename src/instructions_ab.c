@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:53:26 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/19 14:43:07 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/19 19:08:29 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ss(t_stack *root_a, t_stack *root_b, int a)
 	c = sb(root_b, 0);
 	if (a > 0)
 		ft_putendl_fd("ss", 1);
-	return (a + b);
+	return (b + c);
 }
 
 int	rr(t_stack *root_a, t_stack *root_b, int a)
@@ -33,7 +33,7 @@ int	rr(t_stack *root_a, t_stack *root_b, int a)
 	c = rb(root_b, 0);
 	if (a > 0)
 		ft_putendl_fd("rr", 1);
-	return (0);
+	return (b + c);
 }
 
 int	rrr(t_stack *root_a, t_stack *root_b, int a)
@@ -45,5 +45,5 @@ int	rrr(t_stack *root_a, t_stack *root_b, int a)
 	c = rrb(root_b, 0);
 	if (a > 0)
 		ft_putendl_fd("rrr", 1);
-	return (a + b);
+	return (b + c);
 }
