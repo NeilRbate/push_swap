@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 12:45:02 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/15 10:56:48 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/19 09:07:57 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ t_stack	*ft_new_elem(int data, t_stack *root)
 		return (ft_putendl_fd("ERROR: stack fail", 1), NULL);
 	elem->prev = root;
 	if (root->next != NULL && root->prev != NULL)
+	{
 		elem->next = root->next;
+		elem->next->prev = elem;
+	}
 	else
 	{
 		elem->next = root;

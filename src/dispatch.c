@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 13:44:57 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/16 10:44:48 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/19 09:18:25 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	ft_dispatch(t_stack *root_a)
 	else if (ft_stack_size(root_a) <= 5)
 		return (ft_fivenb(root_a));
 	else if (ft_stack_size(root_a) > 5)
-		return (/*A FAIRE */ 0);
-
+		return (ft_bigsort(root_a));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 11:10:05 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/16 10:43:27 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/19 08:26:19 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int		ft_dispatch(t_stack *root_a);
 int		ft_issort(t_stack *root);
 int		ft_threenb(t_stack *root_a);
 int		ft_isminus(t_stack *root_a, int value);
+int		ft_bigsort(t_stack *root_a);
 char	**free_split(char **split);
 void	ft_print_stack(t_stack *root);
 void	ft_delfirst(t_stack *root);
