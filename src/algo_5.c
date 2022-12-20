@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 12:58:59 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/20 07:29:55 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/20 12:59:08 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	ft_twonb(t_stack *root_a)
 {
 	if (ft_issort(root_a) == 1)
 		return (0);
-	sa(root_a, 1);
+	ft_putendl_fd("sa", 1);
 	return (0);
 }
 
@@ -80,7 +80,7 @@ int	ft_threenb(t_stack *root_a)
 		return (ra(root_a, 1), rra(root_a, 1), 0);
 	else if (elem1->data < elem2->data && elem2->data > elem3->data
 		&& elem3->data < elem1->data)
-		return (sa(root_a, 1), rra(root_a, 1), 0);
+		return (rra(root_a, 1), 0);
 	else if (elem1->data > elem2->data && elem2->data < elem3->data)
 		return (ra(root_a, 1), 0);
 	else if (elem1->data < elem2->data && elem2->data > elem3->data)

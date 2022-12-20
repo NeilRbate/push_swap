@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 12:02:35 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/20 08:18:38 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/20 13:06:34 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,12 +81,17 @@ int	ft_isvalidvalue(char **argv)
 		}
 		i++;
 	}
+	if (i == 1)
+		exit(EXIT_SUCCESS);
 	return (0);
 }
 
 t_stack	*ft_argstack(char **argv)
 {
-	if (ft_isvalidvalue(argv) != 0)
+	int	ret;
+
+	ret = ft_isvalidvalue(argv);
+	if (ret != 0)
 		return (NULL);
 	return (ft_createstack(argv));
 }
