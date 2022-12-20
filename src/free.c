@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/07 10:01:34 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/07 10:44:21 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/20 11:41:34 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,22 @@ char	**free_split(char **split)
 t_stack	*free_stack(t_stack *root)
 {
 	t_stack	*elem;
+	t_stack	*stock;
 
 	elem = root->next;
-	if (root->next != NULL && root->next != root)
+	stock = elem->next;
+	if (ft_stack_size(root) == 1)
 	{
-		elem = elem->next;
-		while (elem->next != root)
+		free(elem);
+		return (NULL);
+	}
+	else if (ft_stack_size(root) > 1)
+	{
+		while (stock != root)
 		{
-			free(elem->prev);
-			elem = elem->next;
+			free(elem);
+			elem = stock;
+			stock = elem->next;
 		}
 	}
 	free(elem);

@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 10:21:58 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/20 11:09:02 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/20 11:39:09 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,11 @@ int	main(int argc, char **argv)
 		return (-1);
 	if (ft_issort(root_a) == 1)
 		return (0);
-	ft_dispatch(root_a);
-	free_stack(root_a);
+	if (ft_dispatch(root_a) != 0)
+	{
+		root_a = free_stack(root_a);
+		return (-1);
+	}
+	root_a = free_stack(root_a);
 	return (0);
 }

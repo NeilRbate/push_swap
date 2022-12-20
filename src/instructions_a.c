@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 12:50:23 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/19 14:41:04 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/20 11:25:38 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	pa(t_stack *root_src, t_stack *root_dst, int a)
 	else if (ft_stack_size(root_src) == 1)
 	{
 		elem = root_src->next;
-		root_src->next = root_src;
-		root_src->prev = root_src;
+		root_src->next = NULL;
+		root_src->prev = NULL;
 		ft_new_elem(elem->data, root_dst);
 		free(elem);
 	}
@@ -47,7 +47,7 @@ int	pa(t_stack *root_src, t_stack *root_dst, int a)
 		stock = elem->next;
 		stock->prev = root_src;
 		root_src->next = stock;
-		ft_new_elem(elem->data, root_dst);
+		stock = ft_new_elem(elem->data, root_dst);
 		free(elem);
 	}
 	if (a > 0)

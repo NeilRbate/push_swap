@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/16 12:01:53 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/20 07:29:10 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/20 11:20:50 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int	ft_bigsort(t_stack *root_a)
 		elem = elem->next;
 	}
 	ft_replace_data(root_a, tab);
-	free(tab);
 	ft_sort(root_a);
+	free(tab);
 	return (0);
 }

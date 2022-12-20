@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 15:49:53 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/19 14:36:44 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/20 11:26:50 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,10 @@ int	pb(t_stack *root_src, t_stack *root_dst, int a)
 	else if (ft_stack_size(root_src) == 1)
 	{
 		elem = root_src->next;
-		root_src->next = root_src;
-		root_src->prev = root_src;
+		root_src->next = NULL;
+		root_src->prev = NULL;
 		ft_new_elem(elem->data, root_dst);
+		free(elem);
 	}
 	else
 	{
