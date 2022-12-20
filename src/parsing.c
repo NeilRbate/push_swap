@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/06 12:02:35 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/16 11:17:09 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/20 08:18:38 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ t_stack	*ft_createstack(char **argv)
 	while (i >= 0)
 	{
 		ft_new_elem(ft_atoi(argv[i]), root);
+		if (root == NULL)
+			return (NULL);
 		i--;
 	}
 	return (root);
@@ -67,14 +69,14 @@ int	ft_isvalidvalue(char **argv)
 	{
 		j = i + 1;
 		if (ft_isoverflow(argv[i]) != 0)
-			return (ft_putendl_fd("ERROR: int overflow", 1), -1);
+			return (ft_putendl_fd("ERROR", 1), -1);
 		if (ft_isvalidarg(argv[i]) != 0)
-			return (ft_putendl_fd("ERROR: invalid value", 1), -1);
+			return (ft_putendl_fd("ERROR", 1), -1);
 		while (argv[j])
 		{
 			if (ft_strlen(argv[i]) == ft_strlen(argv[j])
 				&& ft_strcmp(argv[i], argv[j]) == 0)
-				return (ft_putendl_fd("ERROR: 2 equals values", 1), -1);
+				return (ft_putendl_fd("ERROR", 1), -1);
 			j++;
 		}
 		i++;

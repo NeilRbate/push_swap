@@ -6,7 +6,7 @@
 #    By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/29 10:45:24 by jbarbate          #+#    #+#              #
-#    Updated: 2022/12/16 12:16:00 by jbarbate         ###   ########.fr        #
+#    Updated: 2022/12/20 08:34:32 by jbarbate         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,21 +22,25 @@ CFLAGS = -Wall -Wextra -Werror
 .c.o:
 	${GCC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${NAME}:lib ${OBJS}
-	${GCC} ${CFLAGS} -o ${NAME} ${HEADER} ${OBJS}
-lib:
+${NAME}: ${OBJS}
 	@make -C libft all
+	${GCC} ${CFLAGS} -o ${NAME} ${HEADER} ${OBJS}
 
-all: ${OBJS} ${NAME}
+all: ${NAME}
 
 clean: libclean
 	@rm -f ${OBJS}
 	@echo Everything is clean
 
 libclean:
+	@make -C libft clean
+
+libfclean:
 	@make -C libft fclean
 
-fclean: clean
+fclean: clean libfclean
 	@rm -f ${NAME}
 
 re: fclean all
+
+.PHONY: all clean libclean libfclean fclean re

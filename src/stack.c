@@ -6,7 +6,7 @@
 /*   By: jbarbate <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 12:45:02 by jbarbate          #+#    #+#             */
-/*   Updated: 2022/12/19 09:07:57 by jbarbate         ###   ########.fr       */
+/*   Updated: 2022/12/20 08:17:10 by jbarbate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_stack	*ft_new_root(void)
 
 	root = malloc(sizeof(t_stack));
 	if (!root)
-		return (0);
+		return (NULL);
 	root->prev = NULL;
 	root->next = NULL;
 	root->data = 0;
@@ -31,7 +31,7 @@ t_stack	*ft_new_elem(int data, t_stack *root)
 
 	elem = malloc(sizeof(t_stack));
 	if (!elem)
-		return (ft_putendl_fd("ERROR: stack fail", 1), NULL);
+		return (ft_putendl_fd("ERROR", 1), NULL);
 	elem->prev = root;
 	if (root->next != NULL && root->prev != NULL)
 	{
